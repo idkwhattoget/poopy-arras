@@ -1,6 +1,6 @@
 // you can edit this!
 let teams = 4,
-	bots_per_team = 0;
+	bots_per_team = 8;
 
 // you can edit anything below this if you know what you're doing
 
@@ -46,5 +46,13 @@ module.exports = {
     Y_GRID: 15,
     WIDTH: 5000,
     HEIGHT: 5000,
-    ROOM_SETUP: room
+    ROOM_SETUP: room,
+    SKILL_CAP: 1024,
+    LEVEL_SKILL_POINT_FUNCTION: level => {
+        if (level < 2) return 0;
+        if (level <= 40) return 1;
+        if (level <= 45 && level & 1 == 1) return 1;
+        if (level % 3 == 1 && level < (90 - 42) * 3 + 42) return 1;
+        return 0;
+    },
 };

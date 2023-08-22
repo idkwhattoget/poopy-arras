@@ -1,6 +1,6 @@
 let config = {
     types: [Class.destroyerDominator, Class.gunnerDominator, Class.trapperDominator],
-    neededToWin: 4
+    neededToWin: 5
 };
 let gameWon = false;
 let spawn = (loc, team, color, type = false) => {

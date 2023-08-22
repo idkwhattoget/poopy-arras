@@ -549,19 +549,19 @@ const foodTypes = [
     ),
     new FoodType("Shiny Food",
         [Class.gem, Class.shinySquare, Class.shinyTriangle, Class.shinyPentagon, Class.shinyBetaPentagon, Class.shinyAlphaPentagon],
-        ["scale", 5], 1
+        ["scale", 5], 100
     ),
     new FoodType("Legendary Food",
         [Class.jewel, Class.legendarySquare, Class.legendaryTriangle, Class.legendaryPentagon, Class.legendaryBetaPentagon, Class.legendaryAlphaPentagon],
-        ["scale", 6], 0.1
+        ["scale", 6], 50
     ),
     new FoodType("Shadow Food",
         [Class.shadowSquare, Class.shadowTriangle, Class.shadowPentagon, Class.shadowBetaPentagon, Class.shadowAlphaPentagon],
-        ["scale", 7], 0.005
+        ["scale", 7], 1
     ),
     new FoodType("Rainbow Food",
         [Class.rainbowSquare, Class.rainbowTriangle, Class.rainbowPentagon, Class.rainbowBetaPentagon, Class.rainbowAlphaPentagon],
-        ["scale", 8], 0.001
+        ["scale", 8], 0.5
     ),
     // Commented out because stats aren't done yet.
     // new FoodType("Trans Food",
@@ -570,7 +570,7 @@ const foodTypes = [
     // ),
     new FoodType("Extradimensional Food",
         [Class.cube, Class.dodecahedron, Class.icosahedron],
-        ["scale", 10], 0.0001
+        ["scale", 10], 0.1
     ),
     new FoodType("Nest Food", // Commented out because stats aren't done yet.
         [Class.pentagon, Class.betaPentagon, Class.alphaPentagon, /*Class.alphaHexagon, Class.alphaHeptagon, Class.alphaOctogon, Class.alphaNonagon, Class.alphaDecagon, Class.icosagon*/],

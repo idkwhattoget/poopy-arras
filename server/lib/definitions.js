@@ -1439,7 +1439,7 @@ exports.alphaPentagon = {
         LEVEL: 5,
     },
     VALUE: 15e3,
-    SHAPE: 5,
+    SHAPE: -5,
     SIZE: 58,
     COLOR: 14,
     BODY: {
@@ -1460,7 +1460,7 @@ exports.shinyAlphaPentagon = {
         LEVEL: 5,
     },
     VALUE: 2e5,
-    SHAPE: 5,
+    SHAPE: -5,
     SIZE: 58,
     COLOR: 1,
     BODY: {
@@ -1481,7 +1481,7 @@ exports.legendaryAlphaPentagon = {
         LEVEL: 5,
     },
     VALUE: 2e5,
-    SHAPE: 5,
+    SHAPE: -5,
     SIZE: 58,
     COLOR: 0,
     BODY: {
@@ -1501,7 +1501,7 @@ exports.shadowAlphaPentagon = {
         LEVEL: 5,
     },
     VALUE: 25e5,
-    SHAPE: 5,
+    SHAPE: -5,
     SIZE: 58,
     COLOR: 19,
     ALPHA: 0.25,
@@ -1522,7 +1522,7 @@ exports.rainbowAlphaPentagon = {
         LEVEL: 5,
     },
     VALUE: 1e9,
-    SHAPE: 5,
+    SHAPE: -5,
     SIZE: 58,
     COLOR: 36,
     BODY: {
@@ -3485,6 +3485,25 @@ exports.spectator = {
         DAMAGE: 0,
         SPEED: 5,
         FOV: 2.5,
+        HEALTH: 1e100,
+        SHIELD: 1e100,
+        REGEN: 1e100,
+    },
+};
+exports.surveyor = {
+    PARENT: [exports.testbedBase],
+    LABEL: "Surveyor",
+    ALPHA: 0,
+    CAN_BE_ON_LEADERBOARD: false,
+    ACCEPTS_SCORE: false,
+    DRAW_HEALTH: false,
+    HITS_OWN_TYPE: "never",
+    ARENA_CLOSER: true,
+    SKILL_CAP: [0, 0, 0, 0, 0, 0, 0, 0, 0, 255],
+    BODY: {
+        DAMAGE: 0,
+        SPEED: 5,
+        FOV: 5,
         HEALTH: 1e100,
         SHIELD: 1e100,
         REGEN: 1e100,
@@ -16550,6 +16569,20 @@ for (let i = 0; i < 186; i += c.TIER_MULTIPLIER) { //c.MAX_UPGRADE_TIER is irrel
     };
     exports.levels.UPGRADES_TIER_0.push(exports["level" + LEVEL]);
 }
+exports.colors = {
+    PARENT: [exports.testbedBase],
+    LABEL: "Colors",
+    UPGRADES_TIER_0: [exports.developer]
+};
+for (let i = 0; i < 29; i += 1) { //c.MAX_UPGRADE_TIER is irrelevant
+    let LEVEL = i;
+    exports["color" + LEVEL] = {
+        PARENT: [exports.colors],
+        LEVEL,
+        LABEL: "Color " + LEVEL
+    };
+    exports.colors.UPGRADES_TIER_0.push(exports["color" + LEVEL ]);
+}
 
 exports.teams = {
     PARENT: [exports.testbedBase],
@@ -16575,7 +16608,7 @@ exports.Team100 = {
 exports.teams.UPGRADES_TIER_0.push(exports.Team100);
 
 // TOKEN "UPGRADE PATHS"
-exports.developer.UPGRADES_TIER_0 = [exports.healer, exports.basic, exports.lancer, exports.gameAdminMenu, exports.spectator, exports.eggGenerator, exports.specialTanksMenu, exports.bossesMenu, exports.memes, exports.retrograde, exports.miscEntities, exports.dominators, exports.levels, exports.teams];
+exports.developer.UPGRADES_TIER_0 = [exports.healer, exports.basic, exports.lancer, exports.gameAdminMenu, exports.spectator, exports.surveyor, exports.eggGenerator, exports.specialTanksMenu, exports.bossesMenu, exports.memes, exports.retrograde, exports.miscEntities, exports.dominators, exports.levels, exports.teams, exports.colors];
     exports.gameAdminMenu.UPGRADES_TIER_0 = [exports.basic, exports.gameModMenu, exports.spectator, exports.eggGenerator, exports.developer, exports.specialTanksMenu, exports.bossesMenu, exports.memes];
         exports.memes.UPGRADES_TIER_0 = [exports.vanquisher, exports.armyOfOne, exports.godbasic, exports.diamondShape, exports.rotatedTrap, exports.mummifier, exports.colorMan, exports.seventeenagon];
         exports.gameModMenu.UPGRADES_TIER_0 = [exports.basic, exports.betaTesterMenu, exports.spectator, exports.tankChangesMenu, exports.retrograde];
